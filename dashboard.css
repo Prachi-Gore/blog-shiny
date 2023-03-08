@@ -1,0 +1,44 @@
+body{
+    box-sizing: border-box; 
+    margin: 0px;
+ }
+  nav{
+    height: 50px;
+    width: 100%;
+    /* margin-top: -30px; */
+     display: flex;
+     background-color: rgb(148, 148, 249);
+     overflow: hidden;
+     position: fixed;
+ }
+ .logo{
+     flex:0.2;
+     
+     
+     
+ }
+ .nav-items{
+     flex:0.8;
+     
+     display: flex;
+     justify-content: space-evenly;
+     
+ }
+ .nav-items a{
+     color: white;
+     height:fit-content;
+     width:fit-content;
+     padding: 5px;
+     font-size: 25px;
+     margin: auto;
+     text-decoration: none;
+     
+     
+ }
+ .nav-items a:hover{
+ color: black;
+ }
+ .logo img{
+     height:50px;
+     width:70px;  
+ }
