@@ -5,38 +5,32 @@ body{
   nav{
     height: 50px;
     width: 100%;
-    /* margin-top: -30px; */
+    margin-top: -15.7px;
      display: flex;
      background-color: rgb(148, 148, 249);
      overflow: hidden;
      position: fixed;
  }
  .logo{
-     flex:0.2;
-     
-     
-     
+     flex:0.2;    
  }
  .nav-items{
-     flex:0.8;
-     
+     flex:0.8; 
      display: flex;
      justify-content: space-evenly;
      
  }
  .nav-items a{
-     color: black;
+    color: black;
      height:fit-content;
      width:fit-content;
      padding: 5px;
      font-size: 25px;
      margin: auto;
-     text-decoration: none;
-     
-     
+     text-decoration: none;   
  }
  /* .nav-items a:hover{
- color: aliceblue;
+ color: black;
  } */
  .nav-items a strong{
     padding: 5px;
@@ -46,4 +40,7 @@ body{
  .logo img{
      height:50px;
      width:70px;  
+ }
+ .main-container{
+    
  }

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shiny</title>
+    <title>Web App with Shiny</title>
     <link rel="stylesheet" type="text/css" href="/shiny.css" />
   </head>
   <body>
@@ -13,17 +13,36 @@
       <nav>
         <div class="logo">
         <img src="/images/shiny_logo.png" width="80.56" height="35">
-      </div>
+        </div>
         <div class="nav-items">
           <a href="/index.html"><strong>Home</strong></a>
-          <a href="/shiny.html"><strong>Shiny</strong></a>
+          <a href="/shiny.html"><strong style="background-color: aliceblue;">Shiny</strong></a>
+          <a href="/ui.html"><strong>ui</strong></a>
+          <a href="/server.html"><strong>server</strong></a>
           <a href="/dashboard.html"><strong>ShinyDashboard</strong></a>
-          <a href=""><strong>App Structure</strong></a>
           <a href=""><strong>Scatter</strong></a>
           <a href=""><strong>Histogram</strong></a>
           <a href=""><strong>Barchart</strong></a>
           <a href=""><strong>Boxplot</strong></a>
         </div>
-          
-       
       </nav>
+      
+      <div class="main-container">
+          <h1>What is Shiny ?</h1>
+          <p>Shiny is an R package that makes it easy to build interactive web applications (apps) straight from R. </p>
+<h1>How to install Shiny Package</h1>
+<pre><code>install.packages("shiny")</code></pre>
+<h1>How to use Shiny Package</h1>
+<pre><code>library("shiny")</code></pre>
+<h1>Structure of a Shiny App</h1>
+<p>Shiny apps are contained in a single script called <span>app.R </span></p>
+<p>app.R has three components:</p>
+<ul>
+  <li>a user interface object</li>
+  <li>a server function</li>
+  <li>a shinyApp function</li>
+</ul>
+
+      </div>
+  </body>
+  </html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="/ui.css" />
+  </head>
+  <body>
+    
+     
+      <nav>
+        <div class="logo">
+        <img src="/images/shiny_logo.png" >
+      </div>
+        <div class="nav-items">
+          <a href="/index.html"><strong>Home</strong></a>
+          <a href="/shiny.html"><strong>Shiny</strong></a>
+          
+          <a href="/ui.html"><strong style="background-color: aliceblue;">ui</strong></a>
+          <a href="/server.html"><strong>server</strong></a>
+          <a href="/dashboard.html"><strong>ShinyDashboard</strong></a>
+          <a href=""><strong>Scatter</strong></a>
+          <a href=""><strong>Histogram</strong></a>
+          <a href=""><strong>Barchart</strong></a>
+          <a href=""><strong>Boxplot</strong></a>
+        </div>
+    </nav>
+        <div class="main-container">
+          <p>The user interface (<span>ui</span>) object controls the layout and appearance of our app. The <span>server</span> function contains the instructions that our computer needs to build app. Finally the <span>shinyApp</span> function creates Shiny app from an explicit UI/server pair.</p>  
+          <h1>Let's Build a User Interface</h1>
+          <div class="sub-container1">
+            <div class="sub-container1-code">
+            <h2>code</h2>
+          <pre>
+            <code>
+            <span class="blue">library</span>(shiny)
+
+            ui=fluidPage()
+            server=<span class="blue">function</span>(input,output){}
+            shinyApp(ui, server)
+            </code>
+          </pre>
+        </div>
+        <div class="sub-container1-output">
+          <h2>output</h2>
+          <img alt="output loading...">
+        </div>
+        </div>
+        <h2>Layout</h2>
+        <p>
+            Shiny uses the function <span>fluidPage</span> to create a display that automatically adjusts according to the dimensions of user's browser window. we lay out the user interface of our app by placing elements in the fluidPage function.
+
+            For example, the <span>ui</span> function below creates a user interface that has a <span>title panel</span> and a <span>sidebar layout</span>, which includes a <span>sidebar panel</span>  and a <span>main panel</span>. Note that these elements are placed within the fluidPage function.  
+
+        </p>
+<div class="sub-container2">
+    <h2>code</h2>
+    <pre>
+        <code>
+            ui = fluidPage(
+                titlePanel("title panel"),
+              
+                sidebarLayout(
+                  sidebarPanel("sidebar panel"),
+                  mainPanel("main panel")
+                )
+              )
+        </code>
+    </pre>
+    <img src="" alt="output loading...">
+
+</div>
+        </div>
+
+          
+       
+      
+      </body>
+      </html>

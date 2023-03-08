@@ -1,6 +1,7 @@
 body{
     box-sizing: border-box; 
     margin: 0px;
+    background-color: aliceblue;
  }
   nav{
     height: 50px;
@@ -12,17 +13,12 @@ body{
      position: fixed;
  }
  .logo{
-     flex:0.2;
-     
-     
-     
+     flex:0.2;  
  }
  .nav-items{
      flex:0.8;
-     
      display: flex;
-     justify-content: space-evenly;
-     
+     justify-content: space-evenly; 
  }
  .nav-items a{
      color: black;
@@ -31,19 +27,17 @@ body{
      padding: 5px;
      font-size: 25px;
      margin: auto;
-     text-decoration: none;
-     
-     
+     text-decoration: none;   
  }
  /* .nav-items a:hover{
- color: aliceblue;
+ color: white;
  } */
  .nav-items a strong{
-    padding: 5px;
-    border-radius: 3px;
-    
-  }
+     padding: 5px;
+     border-radius: 3px; 
+   }
  .logo img{
      height:50px;
      width:70px;  
  }
+ 

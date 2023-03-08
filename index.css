@@ -1,6 +1,7 @@
 body{
    box-sizing: border-box; 
    margin: 0px;
+   background-color: aliceblue;
 }
  nav{
    height: 50px;
@@ -25,7 +26,7 @@ body{
     
 }
 .nav-items a{
-    color: white;
+    color: black;
     height:fit-content;
     width:fit-content;
     padding: 5px;
@@ -34,10 +35,16 @@ body{
     text-decoration: none;
     
     
+    
 }
-.nav-items a:hover{
-color: black;
-}
+/* .nav-items a:hover{
+color: white;
+} */
+.nav-items a strong{
+    padding: 5px;
+    border-radius: 3px;
+    
+  }
 .logo img{
     height:50px;
     width:70px;  
@@ -68,14 +75,12 @@ padding-left: 20px;
     font-weight: 400;
 }
 .contents{
-    margin-top: 30px;
+margin-top: 30px;
 background-color: blanchedalmond;
 border: solid;
 width: 100%;
 border-radius: 10px;
 padding-left: 20px;
-font-size: 24px;
-
 }
 .contents h1{
     margin: 10px;
