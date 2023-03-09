@@ -1,34 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Web App with Shiny</title>
-    <link rel="stylesheet" type="text/css" href="/server.css" />
-  </head>
-  <body>
-    
-     
-      <nav>
-        <div class="logo">
-        <img src="/images/shiny_logo.png" >
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web App with shiny</title>
+  <link rel="stylesheet" type="text/css" href="/server.css" />
+</head>
+
+<body>
+
+
+  <nav>
+    <div class="logo">
+      <img src="/images/shiny_logo.png">
+    </div>
+    <div class="nav-items">
+      <a href="/index.html"><strong>Home</strong></a>
+      <a href="/shiny.html"><strong>Shiny</strong></a>
+      <a href="/ui.html"><strong>ui</strong></a>
+      <a href="/server.html"><strong style="background-color: aliceblue;">server</strong></a>
+      <a href="/dashboard.html"><strong>ShinyDashboard</strong></a>
+      <a href=""><strong>Scatter</strong></a>
+      <a href=""><strong>Histogram</strong></a>
+      <a href=""><strong>Barchart</strong></a>
+      <a href=""><strong>Boxplot</strong></a>
+    </div>
+  </nav>
+  <div class="main-container">
+    <div class="sub-container1">
+      <h1>Display output </h1>
+      <div class="sub-container1-code">
+        <h2>code</h2>
+        <pre>
+              <code>
+                <span class="blue">library</span>(shiny)
+                
+                ui = fluidPage(
+
+                          titlePanel("title panel"),
+
+                          sidebarLayout(
+
+                              sidebarPanel("sidebar panel"),
+                              mainPanel(plotOutput('graph'))
+
+                                       )
+                              )
+
+                server=<span class="blue">function</span>(input,output){
+                              output$graph=renderPlot({hist(rnorm(100))})
+                             }
+
+                shinyApp(ui, server)
+
+              </code>
+            </pre>
+
       </div>
-        <div class="nav-items">
-          <a href="/index.html"><strong >Home</strong></a>
-          <a href="/shiny.html"><strong>Shiny</strong></a>
-          <a href="/ui.html"><strong>ui</strong></a>
-          <a href="/server.html"><strong style="background-color: aliceblue;">server</strong></a>
-          <a href="/dashboard.html"><strong>ShinyDashboard</strong></a>
-          <a href=""><strong>Scatter</strong></a>
-          <a href=""><strong>Histogram</strong></a>
-          <a href=""><strong>Barchart</strong></a>
-          <a href=""><strong>Boxplot</strong></a>
-        </div>
-      </nav>   
-      <div class="main-container">
-        <div class="sub-container1"></div>
-        <div class="sub-container1"></div>
+      <div class="sub-container1-output">
+        <h2>output</h2>
+        <img alt="output loading...">
       </div>
-  </body>
+    </div>
+    <div class="sub-container2">
+      <h1>Display reactive output </h1>
+      <div class="sub-container2-code">
+        <h2>code</h2>
+        <pre>
+              <code>
+                <span class="blue">library</span>(shiny)
+
+                ui = fluidPage(
+                   titlePanel("title panel"),
+                   sidebarLayout(
+                    sidebarPanel("sidebar panel",
+                                 numericInput(inputId = "n",label = "Enter Sample Size :",value = 50)),
+                    mainPanel(plotOutput('graph'))
+                  )
+                )
+                
+                server=<span class="blue">function</span>(input,output){
+                  size= reactive({input$n})
+                  output$graph=renderPlot({hist(rnorm(size()))})
+                }
+                
+                shinyApp(ui, server)
+                
+              </code>
+            </pre>
+
+      </div>
+      <div class="sub-container2-output">
+        <h2>output</h2>
+        <img alt="output loading...">
+      </div>
+    </div>
+    here histogram is depend on sample size and sample size is in user's hand it could be anything 10,30,100,500,...so we will write it in <span class="gray">reactive({})</span> function Whenever User update the sample size plot will be re render. 
+    Now this time entire file will not run again Whenever changes happens only that part will be run again. 
+    this is the power of reactive function and it help to improve speed of app
+  </div>
+</body>
+
 </html>

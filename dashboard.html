@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Web App with Shiny</title>
+    <title>Web App with shiny</title>
     <link rel="stylesheet" type="text/css" href="/dashboard.css" />
   </head>
   <body>
@@ -26,6 +26,127 @@
           <a href=""><strong>Barchart</strong></a>
           <a href=""><strong>Boxplot</strong></a>
         </div>
+        </nav>
+        <div class="main-container">
+          <h1>Installation</h1>
+          <pre><code>install.packages("shinydashboard")</code></pre>
+          <h1>Layout</h1>
+          <p>A dashboard has three parts. a <span class="gray">dashboardHeader()</span>, a <span class="gray">dashboardSidebar()</span> and a <span class="gray">dashboardBody()()</span> .</p>
+          <div class="sub-container-page">
+            <pre>
+              <code>
+                <span class="blue">library</span>(shiny)
+                <span class="blue">library</span>(shinydashboard)
+                
+                ui = dashboardPage(
+                  dashboardHeader(),
+                  dashboardSidebar(),
+                  dashboardBody()
+                )
+                
+                server = <span class="blue">function</span>(input, output) { }
+                
+                shinyApp(ui, server)
+              </code>
+            </pre>
+            <img src="" alt="loading...">
+          </div>
+          <div class="sub-container-header">
+            <pre>
+              <code>
+                <span class="blue">library</span>(shiny)
+                <span class="blue">library</span>(shinydashboard)
+                
+                ui = dashboardPage(
+                  dashboardHeader(title = "Web App",
+                                  tags$li(class="dropdown",tags$a(href="https://github.com/Prachi-Gore",icon("github"),target="_blank")),
+                                  tags$li(class="dropdown",tags$a(href="https://www.linkedin.com/in/prachi-gore-4772a11a5",icon("linkedin"),target="_blank"))),
+                  dashboardSidebar(),
+                  dashboardBody()
+                )
+                
+                server = <span class="blue">function</span>(input, output) { }
+                
+                shinyApp(ui, server)
+              </code>
+            </pre>
+            <img src="" alt="loading...">
+          </div>
+          <div class="sub-container-sidebar">
+            <pre>
+              <code>
+                <span class="blue">library</span>(shiny)
+                <span class="blue">library</span>(shinydashboard)
+                
+                ui = dashboardPage(
+                  dashboardHeader(),
+                  dashboardSidebar(
+                    sidebarMenu(
+                      id = "tabs",
+                      menuItem("Graph", tabName = "graph",
+                               menuSubItem("Scatter Plot", tabName = "Scatter-Plot"),
+                               menuSubItem("Box Plot", tabName = "Box-Plot")
+                              )
+                            )
+                  ),
+                  dashboardBody()
+                )
+                
+                server = <span class="blue">function</span>(input, output) { }
+                
+                shinyApp(ui, server)
+                
+              </code>
+            </pre>
+            <img src="" alt="loading...">
+          </div>
+          <div class="sub-container-body">
+            <pre>
+              <code>
+                <span class="blue">library</span>(shiny)
+                <span class="blue">library</span>(shinydashboard)
+                
+                ui_hist = fluidPage(
+                   titlePanel("title panel"),
+                  sidebarLayout(
+                    sidebarPanel("sidebar panel",
+                                 numericInput(inputId = "n",label = "Enter Sample Size :",value = 50)),
+                    mainPanel(plotOutput("histogram"))
+                  )
+                )
+                
+                ui = dashboardPage(
+                  title="dashboard page",
+                  dashboardHeader(),
+                  dashboardSidebar(
+                  sidebarMenu(
+                         id = "tabs",
+                         menuItem("Graph", tabName = "graph",
+                                  menuSubItem("Histogram", tabName = "histogram")
+                                )
+                       )
+                  ),
+                  dashboardBody(
+                    tabItems(
+                      tabItem(tabName = "histogram",ui_hist)
+                   )
+                 )
+                )
+                
+                server=<span class="blue">function</span>(input,output){
+                  size= reactive({input$n})
+                  output$histogram=renderPlot({hist(rnorm(size()))})
+                }
+                
+                shinyApp(ui, server)
+                
+              </code>
+            </pre>
+            <img src="" alt="loading...">
+          </div>
+          
+        </div>
           
        
-      </nav>
+     </body>
+     </html>
