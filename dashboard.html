@@ -30,7 +30,8 @@
           <h1>Installation</h1>
           <pre><code>install.packages("shinydashboard")</code></pre>
           <h1>Layout</h1>
-          <p>A dashboard has three parts. a <span class="gray">dashboardHeader()</span>, a <span class="gray">dashboardSidebar()</span> and a <span class="gray">dashboardBody()</span> .</p>
+          <p>A dashboard has three parts. a <span class="gray">dashboardHeader( )</span> , a <span class="gray">dashboardSidebar( )</span> and a <span class="gray">dashboardBody( )</span> .</p>
+          
           <div class="sub-container-page">
 <pre>
 <code>
@@ -48,9 +49,11 @@
   shinyApp(ui, server)                
 </code>
 </pre>
-            <img src="" alt="loading...">
+            <img src="images/blank_dashboard.png" alt="loading...">
           </div>
+        
           <div class="sub-container-header">
+            <h2>Header</h2>
 <pre>
 <code>
   <span class="blue">library</span>(shiny)
@@ -71,9 +74,10 @@
   shinyApp(ui, server)
 </code>
 </pre>                
-            <img src="" alt="loading...">
+            <img src="images/header.png" alt="loading...">
           </div>
           <div class="sub-container-sidebar">
+            <h2>Sidebar</h2>
 <pre>
 <code>
   <span class="blue">library</span>(shiny)
@@ -98,9 +102,10 @@
   shinyApp(ui, server)               
 </code>
 </pre>            
-            <img src="" alt="loading...">
+            <img src="images/sidebar.png" alt="loading...">
           </div>
           <div class="sub-container-body">
+            <h2>Body</h2>
 <pre>
 <code>
   <span class="blue">library</span>(shiny)
@@ -110,7 +115,8 @@
      titlePanel("title panel"),
     sidebarLayout(
       sidebarPanel("sidebar panel",
-                   numericInput(inputId = "n",label = "Enter Sample Size :",value = 50)),
+                   numericInput(inputId = "n",label = "Enter Sample Size :",
+                   value = 50)),
       mainPanel(plotOutput("histogram"))
     )
   )
@@ -142,7 +148,7 @@
                   
 </code>
 </pre>
-            <img src="" alt="loading...">
+            <img src="images/body.png" alt="loading...">
           </div>
           
         </div>
