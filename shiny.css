@@ -78,8 +78,10 @@ flex-direction: column;
   
  }
  .main-container span{
-    background-color: lightgray;
-    padding: 2px;
+   background-color: lightgray;
+   padding: 2px;
+   border: 1px solid;
+   border-radius: 4px;
  }
  .main-container ul li{
     padding-bottom: 5px;

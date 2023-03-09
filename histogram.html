@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Web App with shiny</title>
-    <link rel="stylesheet" type="text/css" href="/histogram.css" />
+    <link rel="stylesheet" type="text/css" href="/scatter.css" />
   </head>
   <body>
     
@@ -28,15 +28,107 @@
       </nav>
       <div class="main-container">
         <div class="sub-container1">
-            <pre>
-                <code>
-
-                </code>
-            </pre>
-            <img src="" alt="loading...">
+<pre>
+<code>
+  library(shiny)
+  library(shinydashboard)
+  library(tools)           #to check file extension
+  library(dplyr)           #select_if()
+  library(readxl)
+  
+  hist_ui=fluidPage(
+    title="hist",
+    sidebarLayout(
+      sidebarPanel(
+        fileInput(inputId = "file_hist", label = "Select Dataset",
+                  accept = c("text/csv","text/comma-separated-values,
+                              text/plain",".csv",".xlsx"),
+                  buttonLabel = "Browse...",
+                  placeholder = "No file selected"),
+        selectInput(inputId = "hist_var_id",
+                    label = "Select variable",
+                    choices=""),
+        sliderInput(inputId = "bins",label = "Number of bins:", min = 1, 
+                    max = 50,value = 30)
+        ),
+      mainPanel (plotOutput("histogram")) 
+    ))
+  header = dashboardHeader()
+  
+  sidebar=dashboardSidebar(
+    sidebarMenu(
+      id = "tabs",
+      menuItem("Graph", tabName = "graph",
+               menuSubItem("Histogram", tabName = "histogram")
+      )
+    )
+  )
+  
+  body=dashboardBody(
+    tabItems(
+      tabItem("histogram",hist_ui)
+    )
+  )
+  ui = dashboardPage(
+    title = "Web App With Shiny",
+    header,
+    sidebar,
+    body
+  )
+  update_input= function(input_id,label,data){
+    return(
+      updateSelectInput(
+        session = getDefaultReactiveDomain(),
+        inputId = input_id,
+        label = label,
+        choices = names(data()),
+        selected = NULL
+      ) )
+  }
+  server=  function(input,output){
+    data_hist=reactive({
+      req(input$file_hist)
+      file_ext= file_ext(input$file_hist$datapath)
+      
+      if(file_ext=="xlsx"|file_ext=="xls"){
+        df=as.data.frame(read_excel(input$file_hist$datapath))
+        
+      }
+      else{
+        df = read.csv(input$file_hist$datapath )
+        
+      }
+      return(select_if(df, is.numeric))
+    })
+    observe(update_input("hist_var_id",label="select variable",data_hist))
+    
+    output$histogram = renderPlot({
+      
+      x = data_hist()[,input$hist_var_id]
+      # print(x)
+      bins = seq(min(x), max(x), length.out = input$bins + 1)
+      hist(x,xlab=input$hist_var_id, breaks=bins,col="#75AADB",border = "white",
+           main = paste("Histogram of" ,input$hist_var_id))
+    }
+    )
+  }
+  shinyApp(ui,server)                
+</code>
+</pre>
+            <img src="/images/histogram.png" alt="loading...">
         </div>
         <div class="sub-container2">
-            <p></p>
+          <h2>Key Steps</h2>
+          <hr>
+          <ul>
+              <li>ask user to upload data file</li>
+              <li>read it and store it in variable</li>
+              <li>to plot histogram we need one continuous variable</li>
+              <li>extract numerical columns from dataset and show it in select variable option </li>
+              <li>ask user to select variable </li>
+              <li>now use <span class="gray">hist()</span> and <span class="gray">renderPlot()</span> function</li>
+              
+          </ul>
         </div>
       </div>
        </body>

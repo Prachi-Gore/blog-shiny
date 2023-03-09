@@ -47,3 +47,18 @@ body{
      height:50px;
      width:70px;  
  }
+ p,span,code{
+    font-size: 24px;
+ }
+ .blue{
+    color:blue;
+ }
+ pre{
+    width:fit-content;
+    background-color: hsl(0, 2%, 87%);
+    padding: 10px;
+    box-shadow: 5px 5px 5px  rgba(0, 0, 255, .15);
+    
+    border-left: 4px solid #344e78;
+  
+ }
