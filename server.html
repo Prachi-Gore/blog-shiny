@@ -29,77 +29,78 @@
     </div>
   </nav>
   <div class="main-container">
+    <h1>Display output </h1>
     <div class="sub-container1">
-      <h1>Display output </h1>
-      <div class="sub-container1-code">
-        <h2>code</h2>
-        <pre>
-              <code>
-                <span class="blue">library</span>(shiny)
+      
+      <!-- <div class="sub-container1-code"> -->
+        <!-- <h2>code</h2> -->
+ <pre>
+ <code>
+  <span class="blue">library</span>(shiny)
                 
-                ui = fluidPage(
+  ui = fluidPage(
 
-                          titlePanel("title panel"),
+            titlePanel("title panel"),
 
-                          sidebarLayout(
+            sidebarLayout(
 
-                              sidebarPanel("sidebar panel"),
-                              mainPanel(plotOutput('graph'))
+                sidebarPanel("sidebar panel"),
+                mainPanel(plotOutput('graph'))
 
-                                       )
-                              )
-
-                server=<span class="blue">function</span>(input,output){
-                              output$graph=renderPlot({hist(rnorm(100))})
-                             }
-
-                shinyApp(ui, server)
-
-              </code>
-            </pre>
-
-      </div>
-      <div class="sub-container1-output">
-        <h2>output</h2>
-        <img alt="output loading...">
-      </div>
-    </div>
-    <div class="sub-container2">
-      <h1>Display reactive output </h1>
-      <div class="sub-container2-code">
-        <h2>code</h2>
-        <pre>
-              <code>
-                <span class="blue">library</span>(shiny)
-
-                ui = fluidPage(
-                   titlePanel("title panel"),
-                   sidebarLayout(
-                    sidebarPanel("sidebar panel",
-                                 numericInput(inputId = "n",label = "Enter Sample Size :",value = 50)),
-                    mainPanel(plotOutput('graph'))
-                  )
+                         )
                 )
-                
-                server=<span class="blue">function</span>(input,output){
-                  size= reactive({input$n})
-                  output$graph=renderPlot({hist(rnorm(size()))})
-                }
-                
-                shinyApp(ui, server)
-                
-              </code>
-            </pre>
 
-      </div>
-      <div class="sub-container2-output">
-        <h2>output</h2>
-        <img alt="output loading...">
-      </div>
+  server=<span class="blue">function</span>(input,output){
+                output$graph=renderPlot({hist(rnorm(100))})
+               }
+
+  shinyApp(ui, server)                
+</code>
+</pre>
+
+      <!-- </div>
+      <div class="sub-container1-output"> -->
+        <!-- <h2>output</h2> -->
+        <img src="images/fluidpage_hist.png"alt="output loading...">
+      <!-- </div> -->
     </div>
+    <h1>Display reactive output </h1>
+    <div class="sub-container2">
+      
+      <!-- <div class="sub-container2-code">
+        <h2>code</h2> -->
+<pre>
+<code>
+  <span class="blue">library</span>(shiny)
+
+  ui = fluidPage(
+     titlePanel("title panel"),
+     sidebarLayout(
+      sidebarPanel("sidebar panel",
+                   numericInput(inputId = "n",label = "Enter Sample Size :",value = 50)),
+      mainPanel(plotOutput('graph'))
+    )
+  )
+  
+  server=<span class="blue">function</span>(input,output){
+    size= reactive({input$n})
+    output$graph=renderPlot({hist(rnorm(size()))})
+  }
+  
+  shinyApp(ui, server)                                
+</code>
+</pre>
+
+      
+      <!-- <div class="sub-container2-output">
+        <h2>output</h2> -->
+        <img src="images/reactive_hist.png"alt="output loading...">
+      </div>
+    <p>
     here histogram is depend on sample size and sample size is in user's hand it could be anything 10,30,100,500,...so we will write it in <span class="gray">reactive({})</span> function Whenever User update the sample size plot will be re render. 
     Now this time entire file will not run again Whenever changes happens only that part will be run again. 
-    this is the power of reactive function and it help to improve speed of app
+    this is the power of reactive function and it help to improve speed of app.
+  </p>
   </div>
 </body>
 

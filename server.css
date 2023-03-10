@@ -11,6 +11,7 @@ body{
      background-color: rgb(148, 148, 249);
      overflow: hidden;
      position: fixed;
+     z-index: 1;
  }
  .logo{
      flex:0.2;  
@@ -39,5 +40,63 @@ body{
  .logo img{
      height:50px;
      width:70px;  
+ }
+ .main-container{
+    font-size: 24px;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-top: 40px;
+    padding-bottom:40px ;
+ }
+ .main-container p{
+    width: 1300px;
+    line-height: 35px;
+    
+    
+ }
+ 
+ .blue{
+    color:blue;
+ }
+ .gray {
+    background-color: lightgray;
+    padding: 2px;
+    border: 1px solid;
+    border-radius: 4px;
+ }
+ 
+ .sub-container1,.sub-container2{
+    display: flex;
+    margin-top: -10px;
+    background-color: hsl(0, 2%, 87%);
+    box-shadow: 5px 5px 5px  rgba(0, 0, 255, .15);
+    border-left: 8px solid #344e78;
+    position: relative;
+ }
+ .sub-container1 img{
+    width:800px;
+    height:250px;
+    position: absolute;
+    right: 0px;
+ }
+ pre{
+    
+    margin-top: 0px;
+    margin-bottom: 0px;
+ }
+ 
+
+ .main-container img{
+    padding: 8px;
+    background-color: #344e78;
+    margin-left: 30px;
+    
+ }
+ .sub-container2 img{
+    width:700px;
+    height: 290px;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
  }
  

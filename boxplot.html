@@ -30,11 +30,11 @@
         <div class="sub-container1">
 <pre>
 <code>
-  library(shiny)
-  library(shinydashboard)
-  library(tools)           #to check file extension
-  library(dplyr)           #select_if()
-  library(readxl)
+  <span class="blue">library</span>(shiny)
+  <span class="blue">library</span>(shinydashboard)
+  <span class="blue">library</span>(tools)           #to check file extension
+  <span class="blue">library</span>(dplyr)           #select_if()
+  <span class="blue">library</span>(readxl)
   
   boxplot_ui=fluidPage(
     title="boxplot",
@@ -76,7 +76,7 @@
     sidebar,
     body
   )
-  update_input= function(input_id,label,data){
+  update_input= <span class="blue">function</span>(input_id,label,data){
     return(
       updateSelectInput(
         session = getDefaultReactiveDomain(),
@@ -86,7 +86,7 @@
         selected = NULL
       ) )
   }
-  server=  function(input,output){
+  server=  <span class="blue">function</span>(input,output){
     data_boxplot= reactive({
       
       req(input$file_boxplot)

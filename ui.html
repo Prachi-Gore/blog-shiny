@@ -28,49 +28,54 @@
         </div>
     </nav>
         <div class="main-container">
-          <p>The user interface (<span>ui</span>) object controls the layout and appearance of our app. The <span>server</span> function contains the instructions that our computer needs to build app. Finally the <span>shinyApp</span> function creates Shiny app from an explicit UI/server pair.</p>  
+          
           <h1>Let's Build a User Interface</h1>
+          <hr>
           <div class="sub-container1">
             <div class="sub-container1-code">
             <h2>code</h2>
-          <pre>
-            <code>
-            <span class="blue">library</span>(shiny)
+<pre>
+<code>
+  <span class="blue">library</span>(shiny)
 
-            ui=fluidPage()
-            server=<span class="blue">function</span>(input,output){}
-            shinyApp(ui, server)
-            </code>
-          </pre>
+  ui=fluidPage()
+  server=<span class="blue">function</span>(input,output){}
+  shinyApp(ui, server)            
+</code>
+</pre>
         </div>
         <div class="sub-container1-output">
           <h2>output</h2>
-          <img alt="output loading...">
+          <img src="images/blank_fluidpage.png"alt="output loading...">
         </div>
         </div>
         <h2>Layout</h2>
         <p>
-            Shiny uses the function <span>fluidPage</span> to create a display that automatically adjusts according to the dimensions of user's browser window. we lay out the user interface of our app by placing elements in the fluidPage function.
+            Shiny uses the function <span class="gray">fluidPage</span> to create a display that automatically adjusts according to the dimensions of user's browser window. we layout the user interface of our app by placing elements in the fluidPage function.
 
-            For example, the <span>ui</span> function below creates a user interface that has a <span>title panel</span> and a <span>sidebar layout</span>, which includes a <span>sidebar panel</span>  and a <span>main panel</span>. Note that these elements are placed within the fluidPage function.  
+            For example, the <span class="gray">ui</span> function below creates a user interface that has a <span class="gray">title panel</span> and a <span class="gray">sidebar layout</span> , which includes a <span class="gray">sidebar panel</span>  and a <span class="gray">main panel</span>. Note that these elements are placed within the fluidPage function.  
 
         </p>
 <div class="sub-container2">
+  <div class="sub-container2-code">
     <h2>code</h2>
-    <pre>
-        <code>
-            ui = fluidPage(
-                titlePanel("title panel"),
-              
-                sidebarLayout(
-                  sidebarPanel("sidebar panel"),
-                  mainPanel("main panel")
-                )
-              )
-        </code>
-    </pre>
-    <img src="" alt="output loading...">
-
+<pre>
+<code>
+  ui = fluidPage(
+    titlePanel("title panel"),
+  
+    sidebarLayout(
+      sidebarPanel("sidebar panel"),
+      mainPanel("main panel")
+    )
+  )            
+</code>
+</pre>
+</div>
+<div class="sub-container2-output">
+  <h2>output</h2>
+    <img src="images/fluidpage.png" alt="output loading...">
+  </div>
 </div>
         </div>
 

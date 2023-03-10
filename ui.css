@@ -1,11 +1,13 @@
 body{
     box-sizing: border-box; 
     margin: 0px;
+    background-color: aliceblue;
+    
  }
   nav{
     height: 50px;
     width: 100%;
-    margin-top: -15.7px;
+   
      display: flex;
      background-color: rgb(148, 148, 249);
      overflow: hidden;
@@ -41,6 +43,61 @@ body{
      height:50px;
      width:70px;  
  }
+ 
  .main-container{
+    font-size: 24px;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-top: 40px;
+    padding-bottom:40px ;
+ }
+ .main-container p{
+    width: 1200px;
+    line-height: 35px;
     
+    margin-top: -15px;
+ }
+ p,span,code{
+    font-size: 24px;
+ }
+ .blue{
+    color:blue;
+ }
+ .gray {
+    background-color: lightgray;
+    padding: 2px;
+    border: 1px solid;
+    border-radius: 4px;
+ }
+ pre{
+    width:fit-content;
+    
+    background-color: hsl(0, 2%, 87%);
+    box-shadow: 5px 5px 5px  rgba(0, 0, 255, .15);
+    border-left: 8px solid #344e78;
+  
+ }
+ .sub-container1,.sub-container2{
+    display: flex;
+    margin-top: -10px;
+ }
+ .sub-container1 h2,.sub-container2 h2{
+    text-align: center;
+    
+ }
+ h1{
+   
+    margin-bottom: 0px;
+ }
+
+ .main-container img{
+    width:700px;
+    height:185px;
+    padding: 8px;
+    background-color: #344e78;
+    margin-left: 30px;
+    
+ }
+ .sub-container2 img{
+    height: 270px;
  }
