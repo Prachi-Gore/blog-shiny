@@ -6,7 +6,7 @@ body{
   nav{
     height: 50px;
     width: 100%;
-    margin-top: -200px;
+    /* margin-top: -30px; */
      display: flex;
      background-color: rgb(148, 148, 249);
      overflow: hidden;
@@ -43,45 +43,26 @@ body{
      height:50px;
      width:70px;  
  }
- .references{
-    
-   border: 5px solid;
-   width: 400px;
-   height: 300px;
+ .main-container{
+    padding: 50px 0px 50px 0px;
+    width:fit-content;
     display: flex;
     flex-direction: column;
-    background-color: aquamarine;
-    margin: auto;
-    margin-top: 200px ;
-    margin-bottom: 100px;
     align-items: center;
-    justify-content: center;
+    margin: auto;
+    
     font-size: 24px;
    
 
  }
  
- .references ul a {
-    text-decoration: none;
-    color: black;
-    padding: 4px;
-    
-
- }
-li{
-   list-style-type:  symbols(disc);
-   font:  sans-serif;
-   padding-left: 10px;
-}
-
- li:hover{
-    color:blue;
-    text-decoration: underline;
- }
  .thanks,.qns{
     width:100%;
-    margin: 10px;
+    margin: 20px;
     
+ }
+ .thanks{
+    margin-top: 50px;
  }
  img{
     border-radius: 10px;
@@ -89,14 +70,14 @@ li{
  .btn{
    display: flex;
    justify-content: center;
-   
+   margin-bottom: 10px;
    font-size: 24px;
    
 } 
 .btn div {
    background-color: aliceblue;
    margin: 20px;
-   margin-top: 50px;
+   margin-top: 40px;
    margin-bottom: 10px;
    width:100px;
    padding:8px;
