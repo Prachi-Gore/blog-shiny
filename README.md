@@ -1,4 +1,4 @@
-# blog-shiny
+# blog on how to make web app with shiny 
 
 <h3>Tech Stack Used</h3>
  <ul>
@@ -6,7 +6,7 @@
  <li>CSS3</li>
  </ul>
  
-<h3>Do You want to know whether your Birthdate is Lucky for you ? Here is the <a href="https://is-your-birthdate-special.netlify.app/">website</a></h3>
+<h3>Do you want to learn How to render plot in shiny web app ? Here is the <a href="https://web-app-shiny-blog.netlify.app/">blog</a></h3>
 <p>Don't forget to ⭐ if you found it informative</p>
 <h3>Resource: https://shiny.rstudio.com/ </h3>
 
