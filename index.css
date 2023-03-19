@@ -71,6 +71,7 @@ body{
  border: solid;
  border-radius: 10px;
  padding-left: 20px;
+ position: relative;
  
  }
  .my-info span{
@@ -86,6 +87,26 @@ body{
    display: flex;
     
    
+}
+.profile{
+    
+   display: flex;
+   
+   width: fit-content;
+   margin: auto;
+   position: absolute;
+   bottom: 0px;
+   right: 0px;
+  
+   
+}
+.profile img{
+    height: auto;
+    width: auto;
+    border: none;
+    padding-right: 20px;
+    
+    
 }
 .btn div {
     background-color: aliceblue;
@@ -111,3 +132,4 @@ body{
     background-color: hsl(0, 2%, 87%);
     box-shadow: 5px 5px 5px  rgba(0, 0, 255, .15);
 }
+
