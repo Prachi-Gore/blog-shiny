@@ -1,4 +1,4 @@
-# blog on how to make web app with shiny 
+# blog on how to create web app with shiny 
 
 <h3>Tech Stack Used</h3>
  <ul>
